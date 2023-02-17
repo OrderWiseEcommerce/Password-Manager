@@ -25,15 +25,6 @@
                     <input type="email" name="email" class="form-control form-control-lg" id="user-email" value="{{ $REQUEST->input('email') }}" required>
                 </div>
 
-                @if ($certificate_enabled)
-
-                <div class="p-2">
-                    <label for="user-certificate" class="form-label">{{ __('user-create.certificate') }}</label>
-                    <input type="text" name="certificate" class="form-control form-control-lg" id="user-certificate" value="{{ $REQUEST->input('certificate') }}">
-                </div>
-
-                @endif
-
                 <div class="p-2">
                     <label for="user-password" class="form-label">{{ __('user-create.password') }}</label>
 
@@ -45,18 +36,6 @@
                         <button type="button" class="input-group-text input-group-text-lg" title="{{ __('common.generate') }}" data-password-generate="#user-password" tabindex="-1">@icon('refresh-cw', 'w-5 h-5')</button>
                      </div>
                 </div>
-
-                @if ($certificate_enabled)
-
-                <div class="p-2">
-                    <div class="form-check">
-                        <input type="hidden" name="password_enabled" value="">
-                        <input type="checkbox" name="password_enabled" value="1" class="form-check-switch" id="user-password_enabled" {{ $REQUEST->input('password_enabled') ? 'checked' : '' }}>
-                        <label for="user-password_enabled" class="form-check-label">{{ __('user-create.password_enabled') }}</label>
-                    </div>
-                </div>
-
-                @endif
             </div>
 
             <div class="box p-5 mt-5">

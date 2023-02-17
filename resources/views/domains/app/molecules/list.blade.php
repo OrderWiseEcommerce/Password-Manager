@@ -2,14 +2,8 @@
     <table id="app-list-table" class="table table-report sm:mt-2 font-medium whitespace-nowrap" data-table-sort data-table-pagination>
         <thead>
             <tr>
-                <th class="w-1">{{ __('app-index.icon') }}</th>
                 <th>{{ __('app-index.name') }}</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th class="w-1">{{ __('app-index.type') }}</th>
                 <th class="text-center w-1">{{ __('app-index.tags') }}</th>
-                <th class="text-center w-1">{{ __('app-index.visibility') }}</th>
             </tr>
         </thead>
 
@@ -17,20 +11,9 @@
             @foreach ($list as $row)
 
             <tr>
-                <td class="w-1">
-                    <a href="{{ route('app.update', $row->id) }}" class="app-logo"><img src="@image($row->icon, 'resize,0,32')" class="app-logo"></a>
-                </td>
-
                 <td class="truncate max-w-2xs">
                     <a href="{{ route('app.update', $row->id) }}">{{ $row->name }}</a>
                 </td>
-
-                @include ('domains.app.types.'.$row->type.'.list')
-
-                <td class="w-1">
-                    <a href="?type={{ $row->type }}">{{ $row->typeTitle() }}</a>
-                </td>
-
                 <td class="text-center w-1">
                     <div class="flex justify-center space-x-2">
                         @foreach ($row->tags as $each)
@@ -39,14 +22,6 @@
 
                         @endforeach
                     </div>
-                </td>
-
-                <td class="text-center w-1">
-                    <span title="{{ $row->shared ? __('app-index.shared') : __('app-index.private') }}">@icon($row->shared ? 'unlock' : 'lock', 'w-4 h-4')</span>
-
-                    @if ($row->shared)
-                    <span title="{{ $row->editable ? __('app-index.editable') : __('app-index.readonly') }}">@icon($row->editable ? 'edit-2' : 'eye', 'w-4 h-4')</span>
-                    @endif
                 </td>
             </tr>
 

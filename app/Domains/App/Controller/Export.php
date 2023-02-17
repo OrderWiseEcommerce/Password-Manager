@@ -2,6 +2,7 @@
 
 namespace App\Domains\App\Controller;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 
 class Export extends ControllerAbstract
@@ -9,8 +10,11 @@ class Export extends ControllerAbstract
     /**
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(): Response
+    public function __invoke(): RedirectResponse
     {
+        // Need to ensure you can't get here by knowing the URL
+        return redirect()->route('user.profile');
+
         if ($response = $this->actionPost('export')) {
             return $response;
         }

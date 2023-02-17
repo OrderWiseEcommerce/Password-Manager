@@ -2,15 +2,10 @@
 
 @section ('body')
 
-<div class="box p-5">
-    <div class="p-2">
-        <form method="get">
-            <x-select name="type" id="app-type" :options="$types" :label="__('app-create.type')" :selected="$REQUEST->input('type')" :placeholder="__('app-create.type-select')" data-change-submit required></x-select>
-        </form>
-    </div>
-</div>
-
-@if ($type)
+<?php
+// We force all records to be of type 'text' as this best represents what we need to store
+$type = 'text';
+?>
 
 <form method="post" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" name="_action" value="create" />
@@ -21,15 +16,6 @@
             <div class="flex-1 p-2">
                 <label for="app-name" class="form-label">{{ __('app-create.name') }}</label>
                 <input type="text" name="name" class="form-control form-control-lg" id="app-name" value="{{ $REQUEST->input('name') }}" autofocus required>
-            </div>
-
-            <div class="flex-1 p-2">
-                <label for="app-icon" class="form-label">{{ __('app-create.icon') }}</label>
-
-                <div class="input-group">
-                    <input type="file" name="icon" class="form-control form-control-lg" id="app-icon" accept="image/png">
-                    <a href="https://www.google.es/search?as_st=y&tbm=isch&as_q=logo&as_epq=&as_oq=&as_eq=&cr=&as_sitesearch=&safe=images&tbs=isz:l,iar:s,ift:png" class="input-group-text input-group-text-lg" title="{{ __('app-create.icon-search') }}" rel="nofollow noopener noreferrer" target="_blank" tabindex="-1">@icon('search', 'w-5 h-5')</a>
-                </div>
             </div>
         </div>
 
@@ -58,21 +44,9 @@
 
     @include ('domains.app.molecules.create-update-files', ['files' => []])
 
-    @if (empty($AUTH->readonly))
-
-    <div class="box p-5 mt-5">
-        <div class="p-2 form-check">
-            <input type="checkbox" name="shared" value="1" class="form-check-switch" id="app-shared" {{ $REQUEST->input('shared') ? 'checked' : '' }}>
-            <label for="app-shared" class="form-check-label">{{ __('app-create.shared') }}</label>
-        </div>
-
-        <div class="p-2 form-check">
-            <input type="checkbox" name="editable" value="1" class="form-check-switch" id="app-editable" {{ $REQUEST->input('editable') ? 'checked' : '' }}>
-            <label for="app-editable" class="form-check-label">{{ __('app-create.editable') }}</label>
-        </div>
-    </div>
-
-    @endif
+    {{-- Everything is always shared and editable--}}
+    <input type="hidden" name="shared" value="1" id="app-shared">
+    <input type="hidden" name="editable" value="1" id="app-editable">
 
     <div class="box p-5 mt-5">
         <div class="text-right">
@@ -80,7 +54,5 @@
         </div>
     </div>
 </form>
-
-@endif
 
 @stop

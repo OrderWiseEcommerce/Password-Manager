@@ -47,7 +47,7 @@ class Update extends ControllerAbstract
             'row' => $this->row,
             'image_search' => $this->imageSearch(),
             'types' => $typeService->titles(),
-            'type' => $typeService->selected($this->request->input('type')),
+            'type' => 'text',
             'teams' => TeamModel::byUserAllowed($this->auth)->list()->get(),
             'tags' => TagModel::list()->get(),
             'files' => $this->row->files,

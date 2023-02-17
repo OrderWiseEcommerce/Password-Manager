@@ -25,7 +25,7 @@ class Create extends ControllerAbstract
 
         return $this->page('app.create', [
             'types' => $typeService->titles(),
-            'type' => $typeService->selected($this->request->input('type')),
+            'type' => 'text',
             'teams' => TeamModel::byUserAllowed($this->auth)->list()->get(),
             'tags' => TagModel::list()->get(),
         ]);

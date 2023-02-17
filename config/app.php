@@ -81,7 +81,7 @@ return [
     */
 
     'locale' => env('APP_LOCALE', 'es'),
-    'locales' => ['es', 'en', 'de', 'fr', 'br', 'it'],
+    'locales' => ['es', 'en', 'de', 'fr', 'br', 'it', 'ow'],
     'locale_system' => [
         'es' => 'es_ES.UTF-8',
         'en' => 'en_US.UTF-8',
@@ -89,6 +89,7 @@ return [
         'fr' => 'fr_FR.UTF-8',
         'br' => 'pt_BR.UTF-8',
         'it' => 'it_IT.UTF-8',
+        'ow' => 'ow_OW.UTF-8',
     ],
 
     /*
