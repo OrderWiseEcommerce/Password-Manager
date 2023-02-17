@@ -14,7 +14,7 @@
     'icon' => 'Icon (.png)',
     'icon-search' => 'Google Search',
     'icon_reset' => 'Load default icon',
-    'name' => 'Name',
+    'name' => 'Customer',
     'payload' => [
         'cvc' => 'CVC',
         'expires' => 'Expires',
@@ -31,7 +31,7 @@
         'puk' => 'PUK',
         'recovery' => 'Recovery Codes',
         'sim' => 'SIM',
-        'text' => 'Text',
+        'text' => 'Credentials',
         'unlock' => 'Unlock',
         'url' => 'URL',
         'user' => 'User',
@@ -39,7 +39,7 @@
     'save' => 'Save',
     'shared' => 'Application shared with other users',
     'success' => 'The application has been updated successfully',
-    'tags' => 'Tags',
+    'tags' => 'Cart',
     'teams' => 'Teams',
     'type' => 'Type',
 ];

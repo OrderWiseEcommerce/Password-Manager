@@ -1,5 +1,5 @@
 <?php return [
-    'apps' => 'Apps',
+    'apps' => 'Customers',
     'color' => 'Color',
     'create' => 'Create',
     'filter' => 'Filter Tags...',
