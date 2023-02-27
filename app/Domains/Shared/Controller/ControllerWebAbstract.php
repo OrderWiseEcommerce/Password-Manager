@@ -134,7 +134,7 @@ abstract class ControllerWebAbstract extends ControllerAbstract
                     $this->request->merge($r);
                 }
             }
-            else if ($name == "update" && !empty($r['name'])) {
+            else if ($name == "update") {
                 if (!empty($r['payload']['new_text'])) {
                     $r['payload']['text'] = $date_user_stamp . $r['payload']['new_text'] . $content_spacer . $r['payload']['text'];
                     $this->request->merge($r);
