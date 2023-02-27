@@ -123,7 +123,7 @@ abstract class ControllerWebAbstract extends ControllerAbstract
     final protected function actionCall(string $name, ?string $target = null, ...$args)
     {
         $date_user_stamp = '<div style="font-weight:bold">Edited by ' . Auth::user()->name . ' on ' . date('D j F Y @ H:i') . ' (UTC)</div>';
-        $content_spacer = "\n" . str_repeat('-', 50) . "\n";
+        $content_spacer = "\n<hr/>\n";
 
         $r = $this->request->all();
 
