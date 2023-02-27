@@ -40,5 +40,5 @@
         @endfor
     </div>
 
-    <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-update.fields-encrypted') }}</div>
+{{--    <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-update.fields-encrypted') }}</div>--}}
 </div>

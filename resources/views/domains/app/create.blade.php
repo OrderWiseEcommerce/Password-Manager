@@ -39,7 +39,7 @@ $type = 'text';
     <div class="box p-5 mt-5 bg-green-50">
         @include ('domains.app.types.'.$type.'.create')
 
-        <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-create.fields-encrypted') }}</div>
+{{--        <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-create.fields-encrypted') }}</div>--}}
     </div>
 
     @include ('domains.app.molecules.create-update-files', ['files' => []])

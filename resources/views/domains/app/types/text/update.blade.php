@@ -3,5 +3,12 @@
 
     <label for="app-payload-text" class="form-label">{{ __('app-update.payload.text') }}</label>
 
-    <textarea name="payload[text]" class="form-control form-control-lg" id="app-payload-text" rows="10">{{ $REQUEST->input('payload.text') }}</textarea>
+    <textarea name="payload[new_text]" class="form-control form-control-lg" id="app-payload-text" rows="5">{{ $REQUEST->input('payload.new_text') }}</textarea>
+    <input type="hidden" name="payload[text]" value="{{ $REQUEST->input('payload.text') }}">
+</div>
+
+<div class="p-2">
+    <div class="p-2">
+        {!! nl2br($REQUEST->input('payload.text')) !!}
+    </div>
 </div>

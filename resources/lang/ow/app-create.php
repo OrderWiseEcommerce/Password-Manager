@@ -32,7 +32,7 @@
     ],
     'save' => 'Save',
     'shared' => 'Application shared with other users',
-    'success' => 'The application has been created successfully',
+    'success' => 'The customer/cart record has been created successfully',
     'tags' => 'Cart',
     'teams' => 'Teams',
     'type' => 'Type',

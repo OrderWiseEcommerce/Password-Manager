@@ -7,6 +7,13 @@
     <input type="hidden" name="type" value="{{ $type }}" />
 
     <div class="box p-5 mt-5">
+        <div class="text-right">
+            <a href="javascript:;" data-toggle="modal" data-target="#delete-modal" class="btn btn-outline-danger mr-5">{{ __('app-update.delete.button') }}</a>
+            <button type="submit" class="btn btn-primary" data-click-one>{{ __('app-update.save') }}</button>
+        </div>
+    </div>
+
+    <div class="box p-5 mt-5">
         <div class="lg:flex">
             <div class="flex-1 p-2">
                 <label for="app-name" class="form-label">{{ __('app-update.name') }}</label>
@@ -30,7 +37,7 @@
     <div class="box p-5 mt-5 bg-green-50">
         @include ('domains.app.types.'.$type.'.update')
 
-        <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-update.fields-encrypted') }}</div>
+{{--        <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-update.fields-encrypted') }}</div>--}}
     </div>
 
     @include ('domains.app.molecules.create-update-files', ['row' => $row, 'files' => $files])

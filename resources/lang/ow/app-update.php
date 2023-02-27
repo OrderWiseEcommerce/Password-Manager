@@ -38,7 +38,7 @@
     ],
     'save' => 'Save',
     'shared' => 'Application shared with other users',
-    'success' => 'The application has been updated successfully',
+    'success' => 'The customer record has been updated successfully',
     'tags' => 'Cart',
     'teams' => 'Teams',
     'type' => 'Type',

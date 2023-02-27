@@ -3,6 +3,7 @@
 namespace App\Domains\Shared\Controller;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 use Illuminate\Http\Response;
 use Eusonlito\LaravelMeta\Facade as Meta;
@@ -115,13 +116,32 @@ abstract class ControllerWebAbstract extends ControllerAbstract
 
     /**
      * @param string $name
-     * @param ?string $target = null
-     * @param mixed ...$args
-     *
+     * @param string|null $target
+     * @param ...$args
      * @return mixed
      */
     final protected function actionCall(string $name, ?string $target = null, ...$args)
     {
+        $date_user_stamp = '<div style="font-weight:bold">Edited by ' . Auth::user()->name . ' on ' . date('D j F Y @ H:i') . ' (UTC)</div>';
+        $content_spacer = "\n" . str_repeat('-', 50) . "\n";
+
+        $r = $this->request->all();
+
+        if (!empty($r['name'])) {
+            if ($name == "create") {
+                if (!empty($r['payload']['text'])) {
+                    $r['payload']['text'] = $date_user_stamp . $r['payload']['text'];
+                    $this->request->merge($r);
+                }
+            }
+            else if ($name == "update" && !empty($r['name'])) {
+                if (!empty($r['payload']['new_text'])) {
+                    $r['payload']['text'] = $date_user_stamp . $r['payload']['new_text'] . $content_spacer . $r['payload']['text'];
+                    $this->request->merge($r);
+                }
+            }
+        }
+
         try {
             return call_user_func_array([$this, $target ?: $name], $args);
         } catch (Throwable $e) {

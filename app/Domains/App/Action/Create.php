@@ -2,6 +2,7 @@
 
 namespace App\Domains\App\Action;
 
+use App\Domains\App\Model\App;
 use App\Domains\App\Model\App as Model;
 
 class Create extends CreateUpdateAbstract

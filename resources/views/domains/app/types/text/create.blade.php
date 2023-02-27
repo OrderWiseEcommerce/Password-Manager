@@ -3,5 +3,5 @@
 
     <label for="app-payload-text" class="form-label">{{ __('app-create.payload.text') }}</label>
 
-    <textarea name="payload[text]" class="form-control form-control-lg" id="app-payload-text" rows="10">{{ $REQUEST->input('payload.text') }}</textarea>
+    <textarea name="payload[text]" class="form-control form-control-lg" id="app-payload-text" rows="5">{{ $REQUEST->input('payload.text') }}</textarea>
 </div>
