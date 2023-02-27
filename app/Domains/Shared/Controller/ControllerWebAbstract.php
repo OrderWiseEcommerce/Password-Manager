@@ -122,12 +122,12 @@ abstract class ControllerWebAbstract extends ControllerAbstract
      */
     final protected function actionCall(string $name, ?string $target = null, ...$args)
     {
-        $date_user_stamp = '<div style="font-weight:bold">Edited by ' . Auth::user()->name . ' on ' . date('D j F Y @ H:i') . ' (UTC)</div>';
-        $content_spacer = "\n<hr/>\n";
-
         $r = $this->request->all();
 
         if (!empty($r['name'])) {
+            $date_user_stamp = '<div style="font-weight:bold">Edited by ' . Auth::user()->name . ' on ' . date('D j F Y @ H:i') . ' (UTC)</div>';
+            $content_spacer = "<div style='border-bottom:1px solid #888;margin:12px 0'></div>";
+
             if ($name == "create") {
                 if (!empty($r['payload']['text'])) {
                     $r['payload']['text'] = $date_user_stamp . $r['payload']['text'];
