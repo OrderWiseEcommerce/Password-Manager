@@ -1,4 +1,4 @@
 <?php return [
-    'text' => 'You don\'t have any app created yet, you can start with a click here.',
+    'text' => 'There are no customers yet, click to add one.',
     'title' => 'Hello :name!',
 ];
