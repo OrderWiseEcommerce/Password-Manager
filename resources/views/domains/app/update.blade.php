@@ -36,11 +36,9 @@
 
     <div class="box p-5 mt-5 bg-green-50">
         @include ('domains.app.types.'.$type.'.update')
-
-{{--        <div class="pr-2 text-right text-gray-600 text-xs mt-0.5">{{ __('app-update.fields-encrypted') }}</div>--}}
     </div>
 
-    @include ('domains.app.molecules.create-update-files', ['row' => $row, 'files' => $files])
+{{--    @include ('domains.app.molecules.create-update-files', ['row' => $row, 'files' => $files])--}}
 
     {{-- Everything is always shared and editable--}}
     <input type="hidden" name="shared" value="1" id="app-shared">
