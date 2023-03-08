@@ -23,6 +23,8 @@ class Index extends ControllerAbstract
             return $this->page('app.empty');
         }
 
+        $this->list = $this->list->sortBy('name');
+
         return $this->page('app.index', [
             'list' => $this->list,
             'types' => (new TypeService())->titles(),
